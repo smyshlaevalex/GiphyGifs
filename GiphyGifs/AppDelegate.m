@@ -18,35 +18,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    /*NSURLSession *session = [NSURLSession sharedSession];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://api.giphy.com/v1/gifs/search?q=cat&api_key=Bk89RNokSMXJjhDDaHrC0h5gFPc6GJr5&limit=2"]];
-    [request setHTTPMethod:@"GET"];
-    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
-    //[request setHTTPBody:jsonData];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSDictionary* jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        
-        //NSLog(@"%@\n", jsonResponse);
-        
-        @try {
-            NSArray* imageURLs = @[jsonResponse[@"data"][0][@"images"][@"fixed_width"][@"url"], jsonResponse[@"data"][2][@"images"][@"fixed_width"][@"url"]];
-            
-            NSLog(@"%@\n", imageURLs);
-        } @catch (NSException* exception) {
-            NSLog(@"Something bad happend, but nobody cares");
-        }
-    }];
-    
-    [task resume];*/
-    
-    /*[[GiphyStore new] requestGifsWithSearchQuery:@"cat" limit:4 complition:^(NSArray<FLAnimatedImage *> * _Nullable gifs, NSError * _Nullable error) {
-        
-    }];*/
-    
     return YES;
 }
 
