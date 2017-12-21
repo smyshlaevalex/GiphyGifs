@@ -9,16 +9,17 @@
 #import <UIKit/UIKit.h>
 
 #import "GifCollectionViewCell.h"
+#import "SearchBarCollectionReusableView.h"
 
 #import "FLAnimatedImageView.h"
 #import "FLAnimatedImage.h"
 
 #import "GiphyStore.h"
 
-@interface GifsCollectionViewController : UICollectionViewController <UISearchBarDelegate, UISearchResultsUpdating> {
+@interface GifsCollectionViewController : UICollectionViewController <UISearchBarDelegate> {
     GiphyStore* _giphyStore;
     
-    NSArray<FLAnimatedImage*>* _gifs;
+    NSArray<FLAnimatedImage*> *_gifs;
     
     __weak IBOutlet UIActivityIndicatorView *_activityIndicator;
 }

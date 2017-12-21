@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Br1-ib-N3d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Br1-ib-N3d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,17 +19,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DNm-rb-qrj">
                             <size key="itemSize" width="100" height="100"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
-                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" id="H8I-yE-g1s">
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="H8I-yE-g1s">
                             <rect key="frame" x="0.0" y="-116" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="a7z-ae-MEl" customClass="GifCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -50,6 +52,28 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="searchBarHeader" id="Ay2-k3-dlz" customClass="SearchBarCollectionReusableView">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search gifs" translatesAutoresizingMaskIntoConstraints="NO" id="XiS-UG-4PB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="JKg-Xq-aiP" id="Yw7-Bc-gTy"/>
+                                    </connections>
+                                </searchBar>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="XiS-UG-4PB" firstAttribute="leading" secondItem="Ay2-k3-dlz" secondAttribute="leading" id="Hev-St-j9c"/>
+                                <constraint firstItem="XiS-UG-4PB" firstAttribute="top" secondItem="Ay2-k3-dlz" secondAttribute="top" id="RxA-bJ-55u"/>
+                                <constraint firstAttribute="bottom" secondItem="XiS-UG-4PB" secondAttribute="bottom" id="Vl4-oS-0p3"/>
+                                <constraint firstAttribute="trailing" secondItem="XiS-UG-4PB" secondAttribute="trailing" id="W0P-Mc-ai3"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="searchBar" destination="XiS-UG-4PB" id="yQ0-nj-Oy0"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="JKg-Xq-aiP" id="dYQ-TE-h5h"/>
                             <outlet property="delegate" destination="JKg-Xq-aiP" id="MHR-Ru-RBb"/>

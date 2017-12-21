@@ -22,21 +22,15 @@ static NSString * const reuseIdentifier = @"Cell";
     _gifs = [[NSArray alloc] init];
     _giphyStore = [[GiphyStore alloc] init];
     
-    self.navigationItem.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    self.navigationItem.searchController.searchBar.delegate = self;
-    self.navigationItem.searchController.searchResultsUpdater = self;
-    self.navigationItem.searchController.obscuresBackgroundDuringPresentation = NO;
-    self.navigationItem.searchController.searchBar.placeholder = @"Search gifs";
-    
     self.collectionView.allowsSelection = NO;
     
-    self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+    if (@available(iOS 11, *)) {
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAlways;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    self.navigationItem.searchController.active = YES;
     
     [self removeActivityIndicator];
 }
@@ -65,10 +59,14 @@ static NSString * const reuseIdentifier = @"Cell";
     return cell;
 }
 
-#pragma mark <UISearchResultsUpdating>
-
-- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+- (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        SearchBarCollectionReusableView* searchBarHeader = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"searchBarHeader" forIndexPath:indexPath];
+        
+        return searchBarHeader;
+    }
     
+    return [[UICollectionReusableView alloc] init];
 }
 
 #pragma mark <UISearchBarDelegate>
@@ -90,7 +88,20 @@ static NSString * const reuseIdentifier = @"Cell";
         }
     }];
     
-    self.navigationItem.searchController.active = NO;
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    
+    [searchBar resignFirstResponder];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar {
+    searchBar.showsCancelButton = NO;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FA18CAB21FE994A300A05111 /* APIKeyProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18CAB11FE994A300A05111 /* APIKeyProvider.m */; };
+		FA646A7F1FEBAE0000E340CF /* SearchBarCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA646A7E1FEBAE0000E340CF /* SearchBarCollectionReusableView.m */; };
 		FA6B9F0F1FE9CD8E00271EE9 /* NSArray+Map.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6B9F0E1FE9CD8E00271EE9 /* NSArray+Map.m */; };
 		FA6DC8CF1FE7CFC400B552F6 /* GiphyStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6DC8CE1FE7CFC400B552F6 /* GiphyStore.m */; };
 		FA6DC8D21FE7D79C00B552F6 /* GifCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6DC8D11FE7D79C00B552F6 /* GifCollectionViewCell.m */; };
@@ -24,6 +25,8 @@
 /* Begin PBXFileReference section */
 		FA18CAB01FE994A300A05111 /* APIKeyProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeyProvider.h; sourceTree = "<group>"; };
 		FA18CAB11FE994A300A05111 /* APIKeyProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIKeyProvider.m; sourceTree = "<group>"; };
+		FA646A7D1FEBAE0000E340CF /* SearchBarCollectionReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarCollectionReusableView.h; sourceTree = "<group>"; };
+		FA646A7E1FEBAE0000E340CF /* SearchBarCollectionReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBarCollectionReusableView.m; sourceTree = "<group>"; };
 		FA6B9F0D1FE9CD8E00271EE9 /* NSArray+Map.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Map.h"; sourceTree = "<group>"; };
 		FA6B9F0E1FE9CD8E00271EE9 /* NSArray+Map.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Map.m"; sourceTree = "<group>"; };
 		FA6DC8CD1FE7CFC400B552F6 /* GiphyStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiphyStore.h; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				FAA609C31FE7CD6F00546B76 /* GifsCollectionViewController.m */,
 				FA6DC8D01FE7D79C00B552F6 /* GifCollectionViewCell.h */,
 				FA6DC8D11FE7D79C00B552F6 /* GifCollectionViewCell.m */,
+				FA646A7D1FEBAE0000E340CF /* SearchBarCollectionReusableView.h */,
+				FA646A7E1FEBAE0000E340CF /* SearchBarCollectionReusableView.m */,
 				FA6DC8CD1FE7CFC400B552F6 /* GiphyStore.h */,
 				FA6DC8CE1FE7CFC400B552F6 /* GiphyStore.m */,
 				FA18CAB01FE994A300A05111 /* APIKeyProvider.h */,
@@ -185,6 +190,7 @@
 				FA18CAB21FE994A300A05111 /* APIKeyProvider.m in Sources */,
 				FAA609BC1FE7CC1A00546B76 /* main.m in Sources */,
 				FA6DC8D21FE7D79C00B552F6 /* GifCollectionViewCell.m in Sources */,
+				FA646A7F1FEBAE0000E340CF /* SearchBarCollectionReusableView.m in Sources */,
 				FA6DC8D91FE7DF3E00B552F6 /* FLAnimatedImage.m in Sources */,
 				FA6DC8CF1FE7CFC400B552F6 /* GiphyStore.m in Sources */,
 				FAA609C41FE7CD6F00546B76 /* GifsCollectionViewController.m in Sources */,
@@ -325,7 +331,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = GiphyGifs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.GiphyGifs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -340,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = GiphyGifs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alex.GiphyGifs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
